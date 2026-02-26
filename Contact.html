@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Holy Elijah Travel & Tours - Contact</title>
+<link rel="stylesheet" href="stylesheet.css">
+</head>
+
+
+
+
+<body>
+
+    <script>
+const form = document.querySelector('form');
+form.addEventListener('submit', function(e) {
+    e.preventDefault(); // prevent default submit
+    // Simulate form submission via Formspree
+    fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+    }).then(response => {
+        if(response.ok){
+            document.getElementById('popup').style.display = 'block';
+            form.reset();
+        } else {
+            alert('Oops! Something went wrong.');
+        }
+    }).catch(error => alert('Oops! Something went wrong.'));
+});
+
+function closePopup(){
+    document.getElementById('popup').style.display = 'none';
+}
+</script>
+
+<header class="header">
+    <div class="logo">Holy Elijah Travel & Tours</div>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="Packages.Html">Packages</a></li>
+            <li><a href="Destinations.Html">Destinations</a></li>
+            <li><a href="About.html">About</a></li>
+            <li><a href="Contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="contact">
+    <h1>Contact Us</h1>
+    <p>Email: Holy_Elijah@yahoo.com</p>
+    <p>Email: HolyElijahTravelandTours@gmail.com</p>
+    <p>Phone: 0951-743-7572 | 0948-034-2540</p>
+
+    <h2>Booking Inquiry</h2>
+    <form action="https://formspree.io/f/mkovpbeq" method="POST">
+        <input type="text" name="Full Name" placeholder="Full Name" required>
+        <input type="email" name="Email" placeholder="Email Address" required>
+        <input type="tel" name="Contact Number" placeholder="Contact Number" required>
+        <input type="text" name="Destination" placeholder="Destination" required>
+        <input type="number" name="Number of Travelers" placeholder="Number of Travelers" required>
+        <textarea name="Message" placeholder="Message / Special Request"></textarea>
+        <input type="hidden" name="_next" value="thankyou.html">
+        <button type="submit">Submit Inquiry</button>
+    </form>
+</section>
+
+
+
+
+
+<footer>
+    <p>© 2018 Holy Elijah Travel & Tours. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>
